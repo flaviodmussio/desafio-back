@@ -1,9 +1,11 @@
 Desafio Back-end - BRQ
-Descrição:
+====
+
+## Descrição:
 
 A BRQ possui a necessidade de disponibilizar uma api restfull para realizar o crud de clientes e dos pacote de tarifas contratados.
 
-Regras de Negócio
+## Regras de Negócio
 
     Deverá ser realizado o CRUD de cliente e pacote de tarifas
     O cadastro de cliente deverá ter os campos: Nome, CPF e Data de Nascimento
@@ -11,7 +13,7 @@ Regras de Negócio
     Cada cliente deverá possuir 1 pacote de tarifas contratado
     Não poderá ser cadastrado mais de um cliente para o mesmo CPF
 
-Features
+## Features
 
     Deverá haver um endpoint para listagem de todos os clientes 
     
@@ -34,7 +36,7 @@ Features
 
     Deverá haver um endpoint para exclusão de um pacote
 
-Requisitos
+## Requisitos
 
     A API deverá ter um swagger
     Teste unitário
@@ -43,16 +45,17 @@ Requisitos
     Subir a aplicação utilizando o Docker
     Aplicação deverá conter um Readme contendo instruções de como realizar o build e rodar a Aplicação
 
-Diferencial
+## Diferencial
 
     No readme separe uma sessão para explicar a arquitetura da api
     Tenha em mente conceitos de SOLID e clean architecture
     Esteira de CI/CD no github (exemplo Travis CI)
 
-Como submeter?
+## Como submeter?
 
 Deverá ser enviado um PULL REQUEST com o seu teste.
-Como funciona?
+
+## Como funciona?
 
     Fork deste repositório
     Clonar a partir do repositório que foi criada na sua conta

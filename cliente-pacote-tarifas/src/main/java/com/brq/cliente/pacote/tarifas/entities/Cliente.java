@@ -11,11 +11,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.Length;
+
+import com.brq.cliente.pacote.tarifas.validate.Unique;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Entity
+
+@Entity 
 public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -23,7 +28,11 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
+	
+	@NotEmpty(message="Preenchimento obrigatorio")
+	@Length(min=11, max=11, message="O tamanho deve ser de 11 caracteres")
 	@Column(unique=true)
+	@Unique(message = "CPF já existe")
 	private String cpf;
 	
 	@JsonFormat(pattern="dd/MM/yyyy")

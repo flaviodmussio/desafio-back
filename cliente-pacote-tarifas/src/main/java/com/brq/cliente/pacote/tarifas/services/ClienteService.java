@@ -62,6 +62,11 @@ public class ClienteService {
 		newObj.setDataNascimento(obj.getDataNascimento());
 		
 	}
+	
+	public boolean existsByCpf(String cpf) {
+		return repository.existsByCpf(cpf);
+		
+	}
 
 	
 

@@ -3,6 +3,8 @@ package com.brq.cliente.pacote.tarifas.resources;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -47,7 +49,7 @@ public class ClienteResource {
 		}
 		
 		@PostMapping
-		public ResponseEntity<Void> insert(@RequestBody Cliente obj){
+		public ResponseEntity<Void> insert(@Valid @RequestBody Cliente obj){
 			PacoteTarifa p1 = new PacoteTarifa(Pacote.CLASSIC);
 			obj.setPacoteTarifa(p1);
 			obj = service.insert(obj);
@@ -56,7 +58,7 @@ public class ClienteResource {
 		}
 		
 		@PutMapping(value = "/{id}")
-		public ResponseEntity<Void> update(@RequestBody Cliente obj, @PathVariable Long id){
+		public ResponseEntity<Void> update(@Valid @RequestBody Cliente obj, @PathVariable Long id){
 			obj.setId(id);
 			obj = service.update(obj);
 			return ResponseEntity.noContent().build();

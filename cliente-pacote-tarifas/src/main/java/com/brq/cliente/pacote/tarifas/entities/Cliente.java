@@ -19,6 +19,8 @@ import com.brq.cliente.pacote.tarifas.validate.Unique;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.annotations.ApiModelProperty;
+
 
 @Entity 
 public class Cliente implements Serializable {
@@ -26,16 +28,20 @@ public class Cliente implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ApiModelProperty(required = false, hidden = true)
 	private Long id;
+	@ApiModelProperty(value = "Nome do cliente")
 	private String nome;
 	
 	@NotEmpty(message="Preenchimento obrigatorio")
-	@Length(min=11, max=11, message="O tamanho deve ser de 11 caracteres")
+	@Length(min=11, max=11, message="O tamanho de caracteres do cpf deve ser de 11")
 	@Column(unique=true)
 	@Unique(message = "CPF já existe")
+	@ApiModelProperty(value = "Cpf do cliente", example = "11111111111")
 	private String cpf;
 	
 	@JsonFormat(pattern="dd/MM/yyyy")
+	@ApiModelProperty(value = "Data Nascimento do cliente", example = "dd/MM/yyyy")
     private Date dataNascimento;
 	
 	@JsonIgnore

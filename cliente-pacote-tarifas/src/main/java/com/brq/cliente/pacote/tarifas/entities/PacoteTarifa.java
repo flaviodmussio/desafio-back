@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import com.brq.cliente.pacote.tarifas.enums.Pacote;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.annotations.ApiModelProperty;
+
 
 @Entity
 public class PacoteTarifa implements Serializable {
@@ -21,9 +23,13 @@ public class PacoteTarifa implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ApiModelProperty(required = false, hidden = true)
 	private Long id;
+	@ApiModelProperty(value = "Nome do pacote de tarifa")
 	private String nome;
+	@ApiModelProperty(value = "Valor Máximo do pacote de tarifa", example = "10.0")
 	private Double valorMinimo;
+	@ApiModelProperty(value = "Valor Minímo do pacote de tarifa", example = "20.0")
 	private Double valorMaximo;
 	
 	@JsonIgnore

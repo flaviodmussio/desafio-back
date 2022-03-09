@@ -30,6 +30,7 @@ public class ClientePacoteTarifasApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
+		
 		PacoteTarifa p1 = new PacoteTarifa(null, "PACOTE_CLASSIC", 20.0, 30.0);
 		PacoteTarifa p2 = new PacoteTarifa(null, "PACOTE_TOP", 40.0, 50.);
 		PacoteTarifa p3 = new PacoteTarifa(null, "PACOTE_PREMIUM", 50.0, 60.0);
@@ -44,20 +45,7 @@ public class ClientePacoteTarifasApplication implements CommandLineRunner {
 		
 		  pacoteTarifaRepository.saveAll(Arrays.asList(p1,p2,p3));
 		  clienteRepository.saveAll(Arrays.asList(c1,c2,c3));
-		 //c1.setPacoteTarifa(p2);
 		 
-		 // c2.getPacoteTarifa().adAll(Arrays.asList(p2));
-		 // c1.setPacoteTarifa(p1);
-		 // c2.setPacoteTarifa(p1);
-		 // clienteRepository.save(c1);
-		  
-		  //p1.setCliente(c1);
-		  
-		  //PacoteTarifa pt = pacoteTarifaRepository.save(p1);
-		 //clienteRepository.save(c1);
-		  
-		  //pacoteTarifaRepository.save(p1);
-		  
 		  
 		 
 		

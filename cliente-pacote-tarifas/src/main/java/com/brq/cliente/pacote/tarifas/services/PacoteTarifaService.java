@@ -52,7 +52,7 @@ public class PacoteTarifaService {
 	
 	public PacoteTarifa find(Long id) {
 		Optional<PacoteTarifa> obj = repositoTarifaRepository.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: "+id+" Tipo: "+PacoteTarifa.class.getName()));
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Pacote de Tarifa não encontrado!"));
 		
 	}
 	
@@ -61,7 +61,7 @@ public class PacoteTarifaService {
 		 try {
 			 cliente = clienteRepository.findById(clienteId).get();
 		 }catch (Exception e) {
-			throw new ObjectNotFoundException("Objeto não encontrado! Id: "+clienteId+" Tipo: "+Cliente.class.getName());
+			throw new ObjectNotFoundException("Cliente não encontrado!");
 		}
 		  PacoteTarifa pacote = repositoTarifaRepository.findById(cliente.getPacoteTarifa().getId()).get(); 
 		  return pacote;

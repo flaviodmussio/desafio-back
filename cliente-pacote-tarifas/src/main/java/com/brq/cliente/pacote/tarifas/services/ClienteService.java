@@ -50,7 +50,7 @@ public class ClienteService {
 	
 	public Cliente find(Long id) {
 		Optional<Cliente> obj = repository.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: "+id+" Tipo: "+Cliente.class.getName()));
+		return obj.orElseThrow(() -> new ObjectNotFoundException("Cliente não encontrado!"));
 		
 	}
 	

@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import com.brq.cliente.pacote.tarifas.entities.Cliente;
 import com.brq.cliente.pacote.tarifas.entities.PacoteTarifa;
+import com.brq.cliente.pacote.tarifas.repositories.ClienteRepository;
 import com.brq.cliente.pacote.tarifas.repositories.PacoteTarifaRepository;
 import com.brq.cliente.pacote.tarifas.services.exception.DataIntegrityException;
 import com.brq.cliente.pacote.tarifas.services.exception.ObjectNotFoundException;
@@ -17,6 +19,9 @@ public class PacoteTarifaService {
 	
 	@Autowired
 	private PacoteTarifaRepository repositoTarifaRepository;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
 	
 	public List<PacoteTarifa> findAll() {
 		return  repositoTarifaRepository.findAll();
@@ -50,6 +55,18 @@ public class PacoteTarifaService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: "+id+" Tipo: "+PacoteTarifa.class.getName()));
 		
 	}
+	
+	 public PacoteTarifa getPacoteTarifa(Long clienteId) { 
+		 Cliente  cliente;
+		 try {
+			 cliente = clienteRepository.findById(clienteId).get();
+		 }catch (Exception e) {
+			throw new ObjectNotFoundException("Objeto não encontrado! Id: "+clienteId+" Tipo: "+Cliente.class.getName());
+		}
+		  PacoteTarifa pacote = repositoTarifaRepository.findById(cliente.getPacoteTarifa().getId()).get(); 
+		  return pacote;
+	  
+	  }
 	
 	
 	private void upDateDate(PacoteTarifa newObj, PacoteTarifa obj) {

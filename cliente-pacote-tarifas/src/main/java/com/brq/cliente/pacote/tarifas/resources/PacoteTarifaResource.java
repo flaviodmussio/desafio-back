@@ -25,6 +25,8 @@ public class PacoteTarifaResource {
 	@Autowired
 	private PacoteTarifaService service;
 	
+	
+	
 	  @GetMapping 
 	  public ResponseEntity<List<PacoteTarifa>> findAll() { 
 		  List<PacoteTarifa> list = service.findAll(); 
@@ -59,6 +61,12 @@ public class PacoteTarifaResource {
 			return ResponseEntity.noContent().build();
 			
 		}
+		
+		  @GetMapping(value = "/pacoteTarifaByClienteId/{clienteId}") 
+		  public ResponseEntity <PacoteTarifa> getPacoteTarifaByClienteId(@PathVariable Long clienteId) { 
+			  PacoteTarifa pacote = service.getPacoteTarifa(clienteId); 
+			  return ResponseEntity.ok(pacote); 
+		  }
 		
 		
 		

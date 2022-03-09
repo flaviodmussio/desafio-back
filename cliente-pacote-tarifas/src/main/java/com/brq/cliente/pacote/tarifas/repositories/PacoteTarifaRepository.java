@@ -9,6 +9,7 @@ import com.brq.cliente.pacote.tarifas.entities.PacoteTarifa;
 @Repository
 public interface PacoteTarifaRepository extends JpaRepository<PacoteTarifa, Long> {
 
+
 	
 	
 

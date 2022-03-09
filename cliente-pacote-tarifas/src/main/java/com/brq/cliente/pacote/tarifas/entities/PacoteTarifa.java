@@ -1,14 +1,18 @@
 package com.brq.cliente.pacote.tarifas.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.brq.cliente.pacote.tarifas.enums.Pacote;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -22,24 +26,36 @@ public class PacoteTarifa implements Serializable {
 	private Double valorMinimo;
 	private Double valorMaximo;
 	
-	@ManyToOne
-	@JoinColumn(name="cliente_id")
-	private Cliente cliente;
+	@JsonIgnore
+	@OneToMany(mappedBy="pacoteTarifa")
+	private List<Cliente> clientes = new ArrayList<>();
 	
 	public PacoteTarifa() {
 		
 	}
 	
+	public PacoteTarifa(Pacote classic) {
+		addPacote(classic);
+	}
+	
+	public void addPacote(Pacote pacote) {
+		this.id = pacote.getId();
+		this.nome = pacote.getNome();
+		this.valorMinimo = pacote.getValorMinimo();
+		this.valorMaximo = pacote.getValorMaximo();
+	}
 
-	public PacoteTarifa(Long id, String nome, Double valorMinimo, Double valorMaximo, Cliente cliente) {
+	
+
+	public PacoteTarifa(Long id, String nome, Double valorMinimo, Double valorMaximo) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.valorMinimo = valorMinimo;
 		this.valorMaximo = valorMaximo;
-		this.cliente = cliente;
 	}
-
+	
+	
 
 	public Long getId() {
 		return id;
@@ -73,13 +89,14 @@ public class PacoteTarifa implements Serializable {
 		this.valorMaximo = valorMaximo;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
+	
+
+	public List<Cliente> getClientes() {
+		return clientes;
 	}
 
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 
 	@Override

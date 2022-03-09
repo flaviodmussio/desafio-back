@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.brq.cliente.pacote.tarifas.entities.Cliente;
+import com.brq.cliente.pacote.tarifas.entities.PacoteTarifa;
+import com.brq.cliente.pacote.tarifas.enums.Pacote;
 import com.brq.cliente.pacote.tarifas.services.ClienteService;
+import com.brq.cliente.pacote.tarifas.services.PacoteTarifaService;
 
 
 @RestController
@@ -25,6 +28,9 @@ public class ClienteResource {
 	
 	@Autowired
 	private ClienteService service;
+	
+	@Autowired
+	private PacoteTarifaService pacoteTarifaService;;
 	
 	
 	  @GetMapping 
@@ -42,6 +48,8 @@ public class ClienteResource {
 		
 		@PostMapping
 		public ResponseEntity<Void> insert(@RequestBody Cliente obj){
+			PacoteTarifa p1 = new PacoteTarifa(Pacote.CLASSIC);
+			obj.setPacoteTarifa(p1);
 			obj = service.insert(obj);
 			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 			return ResponseEntity.created(uri).build();

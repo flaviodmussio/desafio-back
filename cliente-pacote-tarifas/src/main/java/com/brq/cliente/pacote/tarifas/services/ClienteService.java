@@ -58,6 +58,8 @@ public class ClienteService {
 	
 	private void upDateDate(Cliente newObj, Cliente obj) {
 		newObj.setNome(obj.getNome());
+		newObj.setCpf(obj.getCpf());
+		newObj.setDataNascimento(obj.getDataNascimento());
 		
 	}
 

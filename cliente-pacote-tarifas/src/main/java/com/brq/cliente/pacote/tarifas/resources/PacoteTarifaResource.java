@@ -60,11 +60,6 @@ public class PacoteTarifaResource {
 			
 		}
 		
-		@GetMapping(value = "/peloIdCliente/{clienteId}")
-		public ResponseEntity<List<PacoteTarifa>> getPacoteTarifaByClienteId(@PathVariable Long clienteId) {
-			List<PacoteTarifa> list = service.getPacoteTarifa(clienteId);
-			return ResponseEntity.ok(list);
-		}
 		
 		
 		

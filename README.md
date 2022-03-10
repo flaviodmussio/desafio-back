@@ -61,3 +61,12 @@ Deverá ser enviado um PULL REQUEST com o seu teste.
     Clonar a partir do repositório que foi criada na sua conta
     Procure fazer o máximo de commits com todas as suas decisões
     Abra um Pull Request para este repositório
+	
+## Endereço do swagger
+	http://localhost:8080/swagger-ui.html
+	
+## Endereço do H2 banco de dados em memória
+	http://localhost:8080/h2-console
+	
+	Prencher esta url no campo JDBC URL: jdbc:h2:mem:testdb
+

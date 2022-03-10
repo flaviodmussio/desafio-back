@@ -16,6 +16,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.brq.cliente.pacote.tarifas.entities.Cliente;
 import com.brq.cliente.pacote.tarifas.entities.PacoteTarifa;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
+
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
 public class ClienteRepositoryTest {
@@ -62,13 +65,16 @@ public class ClienteRepositoryTest {
 	@Test
 	public void deletarUmClienteTest() {
 
-		clienteRepository.delete(c1);;
+		clienteRepository.delete(c1);
+		Optional<Cliente> cliente = clienteRepository.findById(c1.getId());
+		assertThat(cliente).isEmpty();
 	}
 	
 	@Test
 	public void retornarUmClienteByIdTest() {
 
 		Optional<Cliente> cliente = clienteRepository.findById(c1.getId());
+		assertNotNull(cliente);
 		System.out.println("Nome: "+cliente.get().getNome());
 	}
 	
@@ -77,8 +83,8 @@ public class ClienteRepositoryTest {
 		
 		Cliente newObj = clienteRepository.findById(c1.getId()).get();
 		upDateDate(newObj, c1);
-		clienteRepository.save(newObj);
-
+		Cliente cliente = clienteRepository.save(newObj);
+		assertNotNull(cliente);
 	}
 	
 	private void upDateDate(Cliente newObj, Cliente obj) {

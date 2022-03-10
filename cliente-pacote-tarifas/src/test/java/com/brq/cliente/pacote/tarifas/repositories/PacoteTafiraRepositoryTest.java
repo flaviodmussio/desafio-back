@@ -1,5 +1,9 @@
 package com.brq.cliente.pacote.tarifas.repositories;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import java.util.Arrays;
 import java.util.Optional;
 
@@ -11,8 +15,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.brq.cliente.pacote.tarifas.entities.PacoteTarifa;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
@@ -50,12 +52,15 @@ public class PacoteTafiraRepositoryTest {
 	public void deletarUmClienteTest() {
 
 		pacoteTarifaRepository.delete(p1);
+		Optional<PacoteTarifa> pacoteTarifa = pacoteTarifaRepository.findById(p1.getId());
+		assertThat(pacoteTarifa).isEmpty();
 	}
 	
 	@Test
 	public void retornarUmClienteByIdTest() {
 
 		Optional<PacoteTarifa> pacoteTarifa = pacoteTarifaRepository.findById(p2.getId());
+		assertNotNull(pacoteTarifa);
 		System.out.println("Nome: "+pacoteTarifa.get().getNome());
 	}
 	

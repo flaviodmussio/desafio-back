@@ -53,7 +53,7 @@ public class ClienteResourceTest {
 	public void before() {
 
 		p1 = new PacoteTarifa(1L, "PACOTE_CLASSIC", 20.0, 30.0);
-		c1 = new Cliente(1L, "Marcos", "18611816803", new Date(), p1);
+		c1 = new Cliente(1L, "Carlos", "18611816803", new Date(), p1);
 	}
 
 	@Test
@@ -63,7 +63,7 @@ public class ClienteResourceTest {
 		when(clienteRepository.findAll()).thenReturn(clienteList);
 		when(clienteservice.findAll()).thenReturn(clienteList);
 		this.mockMvc.perform(get("/clientes")).andExpect(status().isOk())
-				.andExpect(content().string(containsString("Marcos")));
+				.andExpect(content().string(containsString("Carlos")));
 	}
 
 	@Test
@@ -72,7 +72,7 @@ public class ClienteResourceTest {
 		when(clienteRepository.findById(c1.getId())).thenReturn(Optional.of(c1));
 		when(clienteservice.find(c1.getId())).thenReturn(c1);
 		this.mockMvc.perform(get("/clientes/" + c1.getId())).andExpect(status().isOk())
-				.andExpect(content().string(containsString("Marcos")));
+				.andExpect(content().string(containsString("Carlos")));
 	}
 
 	@Test

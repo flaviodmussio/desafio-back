@@ -45,7 +45,7 @@ public class PacoteTafiraRepositoryTest {
 		pacoteTarifaRepository.save(p4);
 		
 		Integer countCount = pacoteTarifaRepository.findAll().size(); 
-		assertEquals(4,countCount); 
+		assertEquals(7,countCount); 
 	}
 	 
 	@Test

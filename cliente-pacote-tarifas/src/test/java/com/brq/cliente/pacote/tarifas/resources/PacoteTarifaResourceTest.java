@@ -53,7 +53,7 @@ public class PacoteTarifaResourceTest {
 	public void before() {
 
 		p1 = new PacoteTarifa(1L, "PACOTE_CLASSIC", 20.0, 30.0);
-		c1 = new Cliente(1L, "Carlos", "18611816803", new Date(), p1);
+		c1 = new Cliente(1L, "Mary", "18611816803", new Date(), p1);
 	}
 
 	@Test

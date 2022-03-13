@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - oraclejdk11
+  - openjdkk11
   
 script: ./mvnw clean install
 

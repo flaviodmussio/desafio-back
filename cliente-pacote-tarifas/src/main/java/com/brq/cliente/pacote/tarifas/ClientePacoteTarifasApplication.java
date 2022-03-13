@@ -38,7 +38,7 @@ public class ClientePacoteTarifasApplication implements CommandLineRunner {
 		  
 		  Cliente c1 = new Cliente(null, "Carlos", "18611816803", new Date(), p1);
 		  Cliente c2 = new Cliente(null, "Maria", "16522498712", new Date(), p2);
-		  Cliente c3 = new Cliente(null, "Joao", "15633214505", new Date(), p2);
+		  Cliente c3 = new Cliente(null, "Jose", "15633214505", new Date(), p2);
 		  
 		  
 		  p1.getClientes().addAll(Arrays.asList(c1));

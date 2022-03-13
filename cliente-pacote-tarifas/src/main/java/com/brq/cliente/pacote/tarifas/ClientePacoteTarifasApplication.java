@@ -36,7 +36,7 @@ public class ClientePacoteTarifasApplication implements CommandLineRunner {
 		  PacoteTarifa p2 = new PacoteTarifa(null, "PACOTE_TOP", 40.0, 50.);
 		  PacoteTarifa p3 = new PacoteTarifa(null, "PACOTE_PREMIUM", 50.0, 60.0);
 		  
-		  Cliente c1 = new Cliente(null, "Carlos", "18611816803", new Date(), p1);
+		  Cliente c1 = new Cliente(null, "Joao", "18611816803", new Date(), p1);
 		  Cliente c2 = new Cliente(null, "Ana", "16522498712", new Date(), p2);
 		  Cliente c3 = new Cliente(null, "Jose", "15633214505", new Date(), p2);
 		  

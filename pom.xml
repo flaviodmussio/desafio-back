@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.brq</groupId>
-	<artifactId>cliente-pacote-tarifas</artifactId>
+	<artifactId>desafio-back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cliente-pacote-tarifas</name>
+	<name>desafio-back</name>
 	<description>Clientes Pacote de Tarifas</description>
 	<properties>
 		<java.version>11</java.version>

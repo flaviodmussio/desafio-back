@@ -11,6 +11,6 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 #
 FROM openjdk:11-jre-slim
-COPY --from=build /home/app/target/cliente-pacote-tarifas-0.0.1-SNAPSHOT.jar /usr/local/lib/cliente-pacote-tarifas.jar
+COPY --from=build /home/app/target/desafio-back-0.0.1-SNAPSHOT.jar /usr/local/lib/desafio-back.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/local/lib/cliente-pacote-tarifas.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/lib/desafio-back.jar"]

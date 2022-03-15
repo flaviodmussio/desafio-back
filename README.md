@@ -74,8 +74,8 @@ Deverá ser enviado um PULL REQUEST com o seu teste.
 	
 ## Subir a aplicação utilizando o Docker
 	Utilize os seguintes comandos na pasta raiz do projeto:
-	Faz o build(gera o .jar) da aplicação para gerar a imagem: docker build -t cliente-pacote-tarifas .
-	Gera o container com base na imagem gerada: docker run -p 8080:8080 cliente-pacote-tarifas
+	Faz o build(gera o .jar) da aplicação para gerar a imagem: docker build -t desafio-back .
+	Gera o container com base na imagem gerada: docker run -p 8080:8080 desafio-back
 	Acessar: http://localhost:8080/swagger-ui.html
 	
 ## Suibr a aplicação local utilizando H2 banco de dados em memória

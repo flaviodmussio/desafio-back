@@ -1,3 +1,7 @@
+# desafio-back
+	
+[![Build Status](https://app.travis-ci.com/MarcosLorencini/desafio-back.svg?branch=main)](https://app.travis-ci.com/MarcosLorencini/desafio-back)
+
 Desafio Back-end - BRQ
 ====
 
@@ -87,9 +91,8 @@ Deverá ser enviado um PULL REQUEST com o seu teste.
 	User Name e Password não precisam ser preenchidas
 	Clique no botão connect.
 	
-## Status do build realizado no Travis CI
+
 	
-	[![Build Status](https://app.travis-ci.com/MarcosLorencini/desafio-back.svg?branch=main)](https://app.travis-ci.com/MarcosLorencini/desafio-back)
 
 
 	

@@ -1,3 +1,7 @@
+# Status build Travis CI
+	
+[![Build Status](https://app.travis-ci.com/MarcosLorencini/desafio-back.svg?branch=main)](https://app.travis-ci.com/MarcosLorencini/desafio-back)
+
 Desafio Back-end - BRQ
 ====
 
@@ -61,3 +65,34 @@ Deverá ser enviado um PULL REQUEST com o seu teste.
     Clonar a partir do repositório que foi criada na sua conta
     Procure fazer o máximo de commits com todas as suas decisões
     Abra um Pull Request para este repositório
+	
+## Arquitetura
+	A arquiterua do pojeto foi desenvolvido em camadas(Pack by Layer) horizontais, onde cada camada é responsável por uma função espeficifica. 
+	
+	Web : Camada controladores(Resource) -> Vão compor as APIs(RestFull), responsável tanto por receber requisições como por enviar a resposta ao usuário; 
+	Servcie: Camada de serviço(service) -> Todos os serviços onde estão as regras de negócio, validações e o que mais for preciso.
+	Data: Camada de acesso a dados(Repositoy) -> Acesso a dados
+	Domain: Camada de dominio -> Informação das entidades que contem contrutores, atributos
+	
+	*As camadas compõe o backend, que disponibiliza a API REST para as aplicações cliente acessarem
+	
+## Subir a aplicação utilizando o Docker
+	Utilize os seguintes comandos na pasta raiz do projeto:
+	Faz o build(gera o .jar) da aplicação para gerar a imagem: docker build -t desafio-back .
+	Gera o container com base na imagem gerada: docker run -p 8080:8080 desafio-back
+	Acessar: http://localhost:8080/swagger-ui.html
+	
+## Suibr a aplicação local utilizando H2 banco de dados em memória
+	Foi utilizado um banco de dados H2 que funciona em memória com um console acessível pelo browser dentro do contexto da aplicação.
+	Na classe ClientePacoteTarifasApplication.java foi criado um mock de dados do cliente e pacote de tarifas, estes dados serão inclusas no H2
+	no momento que subir a aplicação.
+	Após subir a aplicação o acesso é feito por este endereço: http://localhost:8080/h2-console
+	Preencher esta url no campo JDBC URL: jdbc:h2:mem:testdb
+	User Name e Password não precisam ser preenchidas
+	Clique no botão connect.
+	
+
+	
+
+
+	

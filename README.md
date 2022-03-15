@@ -86,6 +86,10 @@ Deverá ser enviado um PULL REQUEST com o seu teste.
 	Preencher esta url no campo JDBC URL: jdbc:h2:mem:testdb
 	User Name e Password não precisam ser preenchidas
 	Clique no botão connect.
+	
+## Status do build realizado no Travis CI
+	
+	[![Build Status](https://app.travis-ci.com/MarcosLorencini/desafio-back.svg?branch=main)](https://app.travis-ci.com/MarcosLorencini/desafio-back)
 
 
 	

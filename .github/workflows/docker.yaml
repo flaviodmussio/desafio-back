@@ -28,6 +28,6 @@ jobs:
       uses: docker/build-push-action@v3.0.0
       with: 
         context: .
-        file: ./Dockerfile.ci
+        file: ./Dockerfile
         push: true 
         tags: ${{ secrets.DOCKER_USERNAME }}/go_ci:latest

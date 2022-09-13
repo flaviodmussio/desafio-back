@@ -16,7 +16,7 @@ jobs:
     - name: Download a Build Artifact 
       uses: actions/download-artifact@v3.0.0
       with: 
-        name: Package
+        name: package
 
     - name: docker Login 
       uses: docker/login-action@v2.0.0 
@@ -28,6 +28,6 @@ jobs:
       uses: docker/build-push-action@v3.0.0
       with: 
         context: .
-        file: ./Dockerfile
+        file: ./Dockerfile.ci
         push: true 
         tags: ${{ secrets.DOCKER_USERNAME }}/go_ci:latest

@@ -1,4 +1,4 @@
-name: build java application
+name: build-java-application
 
 on: [push]
 

@@ -30,4 +30,4 @@ jobs:
         context: .
         file: ./Dockerfile.ci
         push: true 
-        tags: ${{ secrets.DOCKER_USERNAME }}/go_ci:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/desafio-back-app:latest

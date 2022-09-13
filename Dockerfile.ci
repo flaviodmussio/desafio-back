@@ -1,7 +1,5 @@
 FROM openjdk:11
 
-ARG JAR_FILE=Package/*.jar
-
-COPY ${JAR_FILE} app.jar
+COPY Package app.jar
 
 ENTRYPOINT ["java", "-jar", "/app.jar"]

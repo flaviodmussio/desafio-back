@@ -1,4 +1,7 @@
 Desafio Back-end - BRQ
+[![Actions Status](https://github.com/GabsOda/desafio-back/workflows/build-java-application/badge.svg)](https://github.com/GabsOda/desafio-back/actions)
+[![DockerHub Image] (https://img.shields.io/badge/docker--image-desafio--back--app-blue)](https://hub.docker.com/r/gissamuoda/desafio-back-app)
+
 ====
 
 ## Descrição do desafio:

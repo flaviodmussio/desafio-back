@@ -76,10 +76,20 @@ $ docker build -t g_issamu/desafio-back-app:0.0.1-SNAPSHOT .
 ```
 *pode ser escolhido o nome da imagem que quiser, esse é apenas a que eu usei. 
 
-## 3. Rodando a aplicação através do Docker
+## *.Extra 
+### Outra forma de rodar a aplicação
+Também é possível rodar a aplicação através do pull da imagem docker disponível do [dockerhub](https://hub.docker.com/r/gissamuoda/desafio-back-app)
+
+1. no terminal, com o docker instalado na máquina, realizar o pull da imagem:
+    ```shell 
+    $ docker pull gissamuoda/desafio-back-app
+    ```
+
+# Rodando a aplicação
+## Para rodar a aplicação: 
 
 ``` shell
-docker run -p 8080:8080 g_issamu/desafio-back-app:0.0.1-SNAPSHOT
+$ docker run -p 8080:8080 g_issamu/desafio-back-app:0.0.1-SNAPSHOT
 ```
 É utilizado o comando ```docker run``` passando como argumento a porta em que a aplicação estará rodando em sua máquina, por padrão é utilizado a porta em que o Tomcat utiliza para subir. 
 
@@ -89,7 +99,7 @@ Ele estará disponível na url:
 http://localhost:8080/swagger-ui.html
 ```
 
-### 3.1 Console do H2
+### 1. Console do H2
 Como no projeto é utilizado o banco de dados em memória H2, é possível utilizar sua interface gráfica para visualizar os dados presente neste banco através do endpoint ```/h2-console```. 
 
 1. na tela de login do console do H2 será necessário atualizar o campo ```JDBC URL``` para: 

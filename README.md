@@ -78,12 +78,13 @@ $ docker build -t g_issamu/desafio-back-app:0.0.1-SNAPSHOT .
 
 ## *.Extra 
 ### Outra forma de rodar a aplicação
-Também é possível rodar a aplicação através do pull da imagem docker disponível do [dockerhub](https://hub.docker.com/r/gissamuoda/desafio-back-app)
+Também é possível rodar a aplicação através do pull da imagem docker disponível do [dockerhub](https://hub.docker.com/r/gissamuoda/desafio-back-app). 
+A imagem presente no dockerhub desta aplicação é gerado automaticamente pelo github action. 
 
-1. no terminal, com o docker instalado na máquina, realizar o pull da imagem:
-    ```shell 
-    $ docker pull gissamuoda/desafio-back-app
-    ```
+No terminal, realizar o pull da imagem:
+```shell 
+$ docker pull gissamuoda/desafio-back-app
+```
 
 # Rodando a aplicação
 ## Para rodar a aplicação: 
